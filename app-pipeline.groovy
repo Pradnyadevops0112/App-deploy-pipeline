@@ -21,7 +21,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy Stage') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'tomcat-password', path: '', url: 'http://52.66.203.148:8080/')], contextPath: '/', war: '**/*.war'
                 echo "deployment successful"
